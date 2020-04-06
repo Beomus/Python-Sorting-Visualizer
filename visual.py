@@ -59,8 +59,8 @@ if __name__ == "__main__":
         text.set_text(f"Number of operations: {iteration[0]}")
 
     anim = animation.FuncAnimation(fig, func=update_fig,
-        fargs=(bar_rects, iteration), frames=generator, repeat=False, interval = 20,
-        save_count= 200)
+        fargs=(bar_rects, iteration), frames=generator, repeat=False, interval = 10,
+        save_count= 300)
     plt.show()
     try:
         anim.save(f'gifs/{title}.gif', writer = 'imagemagick')
