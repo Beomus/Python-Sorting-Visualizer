@@ -31,13 +31,42 @@ def quick_sort(nums):
         if low < high:
             # This is the index after the pivot, where our lists are split
             split_index = partition(items, low, high)
-            _quick_sort(items, low, split_index)
-            _quick_sort(items, split_index + 1, high)
+            yield from _quick_sort(items, low, split_index)
+            yield from _quick_sort(items, split_index + 1, high)
 
-    _quick_sort(nums, 0, len(nums) - 1)
+    yield from _quick_sort(nums, 0, len(nums) - 1)
+    yield nums
 
 
-# Verify it works
-random_list_of_nums = [22, 5, 1, 18, 99]
-quick_sort(random_list_of_nums)
-print(random_list_of_nums)
+def swap(A, i, j):
+    """Helper function to swap elements i and j of list A."""
+
+    if i != j:
+        A[i], A[j] = A[j], A[i]
+
+def quicksort(nums, start, end):
+    if start >= end:
+        return
+
+    pivot = nums[end]
+    pivot_index = start
+
+    for i in range(start, end):
+        if nums[i] < pivot:
+            nums[i], nums[pivot_index] = nums[pivot_index], nums[i]
+            pivot_index += 1
+        yield nums
+    nums[end], nums[pivot_index] = nums[pivot_index], nums[end]
+    yield nums
+
+    yield from quicksort(nums, start, pivot_index - 1)
+    yield from quicksort(nums, pivot_index + 1, end)
+
+
+
+
+if __name__ == "__main__":
+    # Verify it works
+    random_list_of_nums = [22, 5, 1, 18, 99]
+    quick_sort(random_list_of_nums)
+    print(random_list_of_nums)
