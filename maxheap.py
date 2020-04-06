@@ -35,9 +35,10 @@ def heap_sort(nums):
     for i in range(n - 1, 0, -1):
         nums[i], nums[0] = nums[0], nums[i]
         heapify(nums, i, 0)
-
+        yield nums
 
 # Verify it works
-random_list_of_nums = [35, 12, 43, 8, 51]
-heap_sort(random_list_of_nums)
-print(random_list_of_nums)
+if __name__ == "__main__":
+    random_list_of_nums = [35, 12, 43, 8, 51]
+    heap_sort(random_list_of_nums)
+    print(random_list_of_nums)

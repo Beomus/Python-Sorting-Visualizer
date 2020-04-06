@@ -7,6 +7,7 @@ from insertion import insertion_sort_while
 from merge import merge_sort, merge
 from quicksort import quick_sort, partition, quicksort
 from selection import selection
+from maxheap import heap_sort
 import sys
 
 sys.setrecursionlimit(1500)
@@ -14,9 +15,9 @@ sys.setrecursionlimit(1500)
 
 if __name__ == "__main__":
     N = int(input("Enter number of integers: "))
-    choice_menu = "Enter sorting method:\n(b)ubble\n(i)nsertion\n(m)erge \
+    choice_menu = "Enter sorting method:\n(b)ubble\n(h)eap\n(i)nsertion\n(m)erge \
         \n(q)uick\n(s)election\n"
-    choice = input(choice_menu)
+    choice = input(choice_menu).strip().lower()
 
     A = [i + 1 for i in range(N)]
     random.seed(time.time())
@@ -34,6 +35,9 @@ if __name__ == "__main__":
     elif choice == "q":
         title = "Quick sort"
         generator = quicksort(A, 0, N - 1)
+    elif choice == "h":
+        title = "Max heap sort"
+        generator = heap_sort(A)
     else:
         title = "Selection sort"
         generator = selection(A)
