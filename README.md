@@ -14,4 +14,5 @@ Install python and matplotlib (_not required if you use python from **Anaconda**
 Animation is a bit buggy with larger arrays to sort.
 
 `funcanimation.save()` does not work as intended.
+
 I used **imagemagick** to create gifs.
