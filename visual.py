@@ -60,10 +60,10 @@ if __name__ == "__main__":
 
     anim = animation.FuncAnimation(fig, func=update_fig,
         fargs=(bar_rects, iteration), frames=generator, repeat=False, interval = 20,
-        save_count= 2000)
+        save_count= 200)
     plt.show()
     try:
-        anim.save(f'{title}.gif', writer = 'imagemagick')
+        anim.save(f'gifs/{title}.gif', writer = 'imagemagick')
     except:
         pass
     print("COMPLETED!")

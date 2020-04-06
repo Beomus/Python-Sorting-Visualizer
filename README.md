@@ -1,9 +1,9 @@
 # Sorting Algorithm In Python
 Some basic sorting algorithms made with **Python** using **matplotlib**.
-![Bubble Sort](https://imgur.com/3lzsMGy.gif)
-![Insertion Sort](https://imgur.com/KFLhgq0.gif)
+![Bubble Sort](https://imgur.com/wZwVkok.gif)
+![Insertion Sort](https://imgur.com/9jo5789.gif)
 ![Maxheap Sort](https://imgur.com/UQfbk2j.gif)
-![Merge Sort](https://imgur.com/asEcZH4.gif)
+![Merge Sort](https://imgur.com/lXgdsP2.gif)
 ![Quick Sort](https://imgur.com/2Qwb3io.gif)
 ![Selection Sort](https://imgur.com/89hPaO1.gif)
 ### Quick start
