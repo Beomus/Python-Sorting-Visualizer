@@ -8,8 +8,10 @@ Some basic sorting algorithms made with **Python** using **matplotlib**.
 ![Selection Sort](https://imgur.com/89hPaO1.gif)
 ### Quick start
 Install python and matplotlib (_not required if you use python from **Anaconda**_)
+
 `$ pip install matplotlib`
 ### Known problems
 Animation is a bit buggy with larger arrays to sort.
+
 `funcanimation.save()` does not work as intended.
 I used **imagemagick** to create gifs.
