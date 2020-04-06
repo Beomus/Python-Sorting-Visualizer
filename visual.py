@@ -10,8 +10,8 @@ from selection import selection
 from maxheap import heap_sort
 import sys
 
-sys.setrecursionlimit(1500)
 
+sys.setrecursionlimit(1500)
 
 if __name__ == "__main__":
     N = int(input("Enter number of integers: "))
@@ -36,7 +36,7 @@ if __name__ == "__main__":
         title = "Quick sort"
         generator = quicksort(A, 0, N - 1)
     elif choice == "h":
-        title = "Max heap sort"
+        title = "Maxheap sort"
         generator = heap_sort(A)
     else:
         title = "Selection sort"
@@ -50,6 +50,7 @@ if __name__ == "__main__":
     ax.set_ylim(0, int(1.1 * N))
     text = ax.text(0.02, 0.95, "", transform=ax.transAxes)
 
+
     iteration = [0]
     def update_fig(A, rects, iteration):
         for rect, val in zip(rects, A):
@@ -58,7 +59,12 @@ if __name__ == "__main__":
         text.set_text(f"Number of operations: {iteration[0]}")
 
     anim = animation.FuncAnimation(fig, func=update_fig,
-        fargs=(bar_rects, iteration), frames=generator, interval=1,
-        repeat=False)
-
+        fargs=(bar_rects, iteration), frames=generator, repeat=False, interval = 20,
+        save_count= 2000)
     plt.show()
+    try:
+        anim.save(f'{title}.gif', writer = 'imagemagick')
+    except:
+        pass
+    print("COMPLETED!")
+
